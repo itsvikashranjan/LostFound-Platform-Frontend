@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { API_BASE_URL } from '../config'
 
 const Login = () => {
   const [email, setEmail] = useState("ab@ab.ab")
@@ -9,7 +10,7 @@ const Login = () => {
 
   const SubmitHandler = async (e) => {
     e.preventDefault()
-    const response = await axios.post("http://localhost:3000/login", { email, password })
+    const response = await axios.post(`${API_BASE_URL}/login`, { email, password })
     console.log(response.data)
   }
 

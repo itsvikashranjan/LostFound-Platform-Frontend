@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Card from "../components/Card";
+import { API_BASE_URL } from '../config';
 
 const ReportedItem = () => {
   const [fdata, setFdata] = useState([]);
@@ -10,7 +11,7 @@ const ReportedItem = () => {
   const fetch = async () => {
     try {
       setIsLoading(true);
-      const response = await axios.get("http://localhost:3000/reports");
+      const response = await axios.get(`${API_BASE_URL}/reports`);
       setFdata(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

@@ -37,6 +37,7 @@
 // export default Report;
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { API_BASE_URL } from '../config';
 
 function Report() {
   const [formData, setFormData] = useState({
@@ -79,7 +80,7 @@ function Report() {
     data.append("image", formData.image);
   
     try {
-      const response = await fetch("http://localhost:3000/report", {
+      const response = await fetch(`${API_BASE_URL}/report`, {
         method: "POST",
         body: data
       });

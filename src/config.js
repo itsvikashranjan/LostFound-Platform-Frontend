@@ -1,0 +1,1 @@
+export const API_BASE_URL = 'https://lostfound-platform-backend.onrender.com'; 
